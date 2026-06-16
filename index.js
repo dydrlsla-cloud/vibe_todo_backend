@@ -8,8 +8,10 @@ import mongoose from "mongoose";
 import todoRoutes from "./routes/todos.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+try{
 process.loadEnvFile(path.join(__dirname, ".env"));
-
+} catch (error) {
+}
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const PORT = process.env.PORT || 5000;
